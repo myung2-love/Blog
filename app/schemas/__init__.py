@@ -1,0 +1,1 @@
+from app.schemas.post import PostBase, PostCreate, Post
