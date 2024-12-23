@@ -1,0 +1,1 @@
+from app.services.post import fetch_posts, add_post

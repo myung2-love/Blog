@@ -6,7 +6,7 @@ def get_posts(db: Session):
     return db.query(Post).all()
 
 def create_post(db: Session, post: PostCreate):
-    db_post = Post(**post.dict())
+    db_post = Post(**post.model_dump())
     db.add(db_post)
     db.commit()
     db.refresh(db_post)

@@ -8,10 +8,11 @@ VS Code에서는 단축키 Ctrl+Shift+V(Windows/Linux) 또는 Cmd+Shift+V(Mac)�
 ## **목차**
 1. [Docker 실행](#docker-실행)
 2. [Docker 종료](#docker-종료)
-3. [컨테이너 접속](#컨테이너-접속)
-4. [테스트 실행](#테스트-실행)
-5. [데이터 확인](#데이터-확인)
-6. [가상환경 및 의존성 설치](#가상환경-및-의존성-설치)
+3. [Docker 재시작](#docker-재시작)
+4. [컨테이너 접속](#컨테이너-접속)
+5. [테스트 실행](#테스트-실행)
+6. [데이터 확인](#데이터-확인)
+7. [가상환경 및 의존성 설치](#가상환경-및-의존성-설치)
 
 ---
 
@@ -64,6 +65,14 @@ docker system prune -a
 
 ---
 
+## **Docker 재시작**
+실행중인 컨테이너를 종료하고 다시 시작하려면:
+```bash
+docker-compose down && docker-compose up --build
+```
+
+---
+
 ## **컨테이너 접속**
 ### **1. FastAPI 컨테이너(web-1) 접속**
 web-1 컨테이너 내부에 접속하려면:
@@ -86,6 +95,8 @@ FastAPI 컨테이너 내부에 접속 후 테스트를 실행합니다:
 
 ```bash
 docker exec -it blog-web-1 /bin/bash
+```
+```bash
 pytest
 ```
 ### **2. 테스트 결과**

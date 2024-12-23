@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 class PostBase(BaseModel):
     title: str
@@ -10,5 +10,4 @@ class PostCreate(PostBase):
 class Post(PostBase):
     id: int
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
